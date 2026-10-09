@@ -1,0 +1,87 @@
+{
+  "name": "@openbox-ai/openbox-agentrt-governance",
+  "version": "1.0.0",
+  "description": "OpenBox governance and observability SDK for Agent-RT (TypeScript) — policy, guardrails, and HITL approval enforcement over @openbox-ai/openbox-sdk-ts",
+  "license": "MIT",
+  "author": "OpenBox Team",
+  "homepage": "https://github.com/OpenBox-AI/openbox-agentrt-sdk-ts#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OpenBox-AI/openbox-agentrt-sdk-ts.git"
+  },
+  "bugs": {
+    "url": "https://github.com/OpenBox-AI/openbox-agentrt-sdk-ts/issues"
+  },
+  "keywords": [
+    "openbox",
+    "agent-rt",
+    "governance",
+    "observability",
+    "agents",
+    "sdk"
+  ],
+  "type": "module",
+  "sideEffects": false,
+  "engines": {
+    "node": ">=24.10.0"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./governance": {
+      "types": "./dist/governance/index.d.ts",
+      "import": "./dist/governance/index.js",
+      "default": "./dist/governance/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsup",
+    "ci:check": "npm run lint && npm run typecheck && npm run test && npm run build && npm run import:check",
+    "clean": "rm -rf coverage dist",
+    "example:content-writer": "node examples/content-builder-agent/content-writer.ts",
+    "example:smoke": "node examples/content-builder-agent/run-smoke-agent.ts",
+    "format": "prettier --write .",
+    "import:check": "node scripts/check-root-import-light.mjs",
+    "lint": "eslint .",
+    "pack:check": "npm pack --dry-run",
+    "prepack": "npm run clean && npm run build",
+    "prepublishOnly": "npm run lint && npm run typecheck && npm run test",
+    "test": "vitest run --coverage",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@openbox-ai/openbox-sdk-ts": "^2.1.0"
+  },
+  "peerDependencies": {
+    "agent-rt": "0.0.3"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.34.0",
+    "@types/node": "^24.3.0",
+    "@vitest/coverage-v8": "^5.0.3",
+    "agent-rt": "0.0.3",
+    "eslint": "^9.34.0",
+    "eslint-config-prettier": "^10.1.8",
+    "prettier": "^3.6.2",
+    "tsup": "^8.5.0",
+    "typescript": "^5.9.2",
+    "typescript-eslint": "^8.42.0",
+    "vitest": "^5.0.3"
+  }
+}

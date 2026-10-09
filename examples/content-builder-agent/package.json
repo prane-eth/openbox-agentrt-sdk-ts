@@ -1,0 +1,27 @@
+{
+  "name": "content-builder-agent",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Content writer agent (Agent-RT + OpenBox governance) — TypeScript example",
+  "scripts": {
+    "start": "node content-writer.ts",
+    "smoke": "node run-smoke-agent.ts",
+    "typecheck": "tsc -p ."
+  },
+  "dependencies": {
+    "@google/genai": "^2.28.0",
+    "@openbox-ai/openbox-agentrt-governance": "file:../..",
+    "@openbox-ai/openbox-sdk-ts": "^2.1.0",
+    "@tavily/core": "^0.7.14",
+    "agent-rt": "0.0.3",
+    "chalk": "^4.1.2",
+    "dotenv": "^17.4.2",
+    "js-yaml": "^4.3.2"
+  },
+  "devDependencies": {
+    "@types/js-yaml": "^4.0.9",
+    "@types/node": "^24.3.0",
+    "typescript": "^5.9.2"
+  }
+}

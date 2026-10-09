@@ -1,0 +1,8 @@
+.env
+node_modules/
+
+# Generated agent output (created at runtime by content-writer.ts)
+blogs/
+linkedin/
+tweets/
+research/

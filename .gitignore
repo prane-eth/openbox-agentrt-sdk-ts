@@ -1,0 +1,33 @@
+# Secrets — never commit
+.env
+.env.*
+!.env.example
+
+# Dependencies
+node_modules/
+
+# Compiled output — recipients run `npm install && npm run build` themselves
+dist/
+
+# Test coverage output
+coverage/
+
+# Build / tooling caches
+*.tsbuildinfo
+.eslintcache
+
+# npm pack/publish artifacts
+*.tgz
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+*.log
+
+# Local Claude settings
+.claude/settings.local.json
+
+# Internal working artifacts — kept local, not published to the public repo
+_notes/
+plans/
+proposals/
